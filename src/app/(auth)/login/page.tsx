@@ -30,7 +30,8 @@ const loginSchema = z.object({
     .email("รูปแบบอีเมลไม่ถูกต้อง"),
   password: z
     .string()
-    .min(1, "กรุณากรอกรหัสผ่าน")
+     .min(1, "Please enter your password")
+
     .min(8, "รหัสผ่านต้องมีอย่างน้อย 8 ตัวอักษร"),
 })
 
