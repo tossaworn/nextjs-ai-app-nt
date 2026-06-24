@@ -1,11 +1,25 @@
 import type { Metadata } from "next";
-import { Prompt, Roboto, Lora } from "next/font/google";
-import { cn } from "@/lib/utils";
+import { Inter, Libre_Baskerville, Source_Code_Pro, Prompt } from "next/font/google";
 import "../globals.css";
 
-const loraHeading = Lora({subsets:['latin'],variable:'--font-heading'});
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-sans",
+  display: "swap",
+});
 
-const roboto = Roboto({subsets:['latin'],variable:'--font-sans'});
+const libreBaskerville = Libre_Baskerville({
+  weight: ["400", "700"],
+  subsets: ["latin"],
+  variable: "--font-heading",
+  display: "swap",
+});
+
+const sourceCodePro = Source_Code_Pro({
+  subsets: ["latin"],
+  variable: "--font-mono",
+  display: "swap",
+});
 
 export const promptFont = Prompt({
   weight: ['400', '500', '700'],
@@ -27,7 +41,7 @@ export default function AuthLayout({
   return (
     <html
       lang="th"
-      className={cn(promptFont.className, "font-sans", roboto.variable, loraHeading.variable)}
+      className={`${inter.variable} ${libreBaskerville.variable} ${sourceCodePro.variable} ${promptFont.className}`}
     >
       <body>
         {children}
@@ -35,3 +49,4 @@ export default function AuthLayout({
     </html>
   );
 }
+
