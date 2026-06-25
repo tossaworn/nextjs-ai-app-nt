@@ -3,13 +3,14 @@ import AppLoading from "../components/app-loading";
 import { Suspense } from "react";
 
 async function ApiVersion() {
+  let version = 'Unknown';
   try {
     const response = await fetch('https://api.codingthailand.com/api/version');
     const apiInfo = await response.json();
-    return <p className="text-[13px] text-[#A8A29E]">API Version: {apiInfo.data.version}</p>;
-  } catch (e) {
-    return <p className="text-[13px] text-[#A8A29E]">API Version: Unknown</p>;
+    version = apiInfo.data.version;
+  } catch {
   }
+  return <p className="text-[13px] text-[#A8A29E]">API Version: {version}</p>;
 }
 
 export default function AboutPage() {
@@ -33,9 +34,9 @@ export default function AboutPage() {
             <div className="space-y-6">
               <h2 className="text-2xl font-serif font-bold text-[#1C1917]">เรื่องราวของเรา</h2>
               <p className="text-[17px] text-[#1C1917] leading-[1.8]">
-                เริ่มต้นจากความเชื่อที่ว่า "ความเรียบง่ายคือความซับซ้อนขั้นสูงสุด" เราจึงออกแบบ 
+                เริ่มต้นจากความเชื่อที่ว่า &quot;ความเรียบง่ายคือความซับซ้อนขั้นสูงสุด&quot; เราจึงออกแบบ 
                 แพลตฟอร์มนี้ขึ้นมาโดยตัดทอนสิ่งที่ไม่จำเป็นออกทั้งหมด เพื่อให้เหลือเพียงสิ่งที่สำคัญที่สุด 
-                นั่นคือ "เนื้อหา" และ "ประสบการณ์การอ่าน" 
+                นั่นคือ &quot;เนื้อหา&quot; และ &quot;ประสบการณ์การอ่าน&quot; 
               </p>
               <p className="text-[17px] text-[#1C1917] leading-[1.8]">
                 ทุกรายละเอียดใน ThoughtStream ถูกกลั่นกรองเพื่อให้เกิดสมาธิและความสงบ 

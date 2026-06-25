@@ -26,13 +26,13 @@ import { useRouter } from "next/navigation"
 const loginSchema = z.object({
   email: z
     .string()
-    .min(1, "กรุณากรอกอีเมล")
-    .email("รูปแบบอีเมลไม่ถูกต้อง"),
+    .min(1, "Please enter your email")
+    .email("Invalid email format"),
   password: z
     .string()
      .min(1, "Please enter your password")
 
-    .min(8, "รหัสผ่านต้องมีอย่างน้อย 8 ตัวอักษร"),
+    .min(8, "Password must be at least 8 characters"),
 })
 
 type LoginFormValues = z.infer<typeof loginSchema>
@@ -53,7 +53,7 @@ export default function LoginForm() {
           password: data.password,
          }, {
             onSuccess: () => {
-              alert('เข้าระบบสำเร็จ');
+              alert('Login successful');
               router.replace('/');
             },
             onError: (ctx) => {
@@ -66,9 +66,9 @@ export default function LoginForm() {
   <div className="min-h-screen flex items-center justify-center">
     <Card className="w-full sm:max-w-md">
       <CardHeader>
-        <CardTitle>เข้าสู่ระบบ</CardTitle>
+        <CardTitle>Login</CardTitle>
         <CardDescription>
-          กรอกอีเมลและรหัสผ่านเพื่อเข้าสู่ระบบ
+          Enter your email and password to login
         </CardDescription>
       </CardHeader>
       <CardContent>
@@ -79,7 +79,7 @@ export default function LoginForm() {
               control={form.control}
               render={({ field, fieldState }) => (
                 <Field data-invalid={fieldState.invalid}>
-                  <FieldLabel htmlFor="form-login-email">อีเมล</FieldLabel>
+                  <FieldLabel htmlFor="form-login-email">Email</FieldLabel>
                   <Input
                     {...field}
                     id="form-login-email"
@@ -100,7 +100,7 @@ export default function LoginForm() {
               render={({ field, fieldState }) => (
                 <Field data-invalid={fieldState.invalid}>
                   <FieldLabel htmlFor="form-login-password">
-                    รหัสผ่าน
+                    Password
                   </FieldLabel>
                   <Input
                     {...field}
@@ -121,12 +121,12 @@ export default function LoginForm() {
       </CardContent>
       <CardFooter className="flex flex-col gap-3">
         <Button type="submit" form="form-login" className="w-full">
-          เข้าสู่ระบบ
+          Login
         </Button>
         <p className="text-center text-sm text-muted-foreground">
-          ยังไม่มีบัญชี?{" "}
+          Don&apos;t have an account?{" "}
           <a href="/register" className="underline underline-offset-4 hover:text-primary">
-            สมัครสมาชิก
+            Sign up
           </a>
         </p>
       </CardFooter>

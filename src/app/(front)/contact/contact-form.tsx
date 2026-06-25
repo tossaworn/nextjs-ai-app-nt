@@ -81,7 +81,7 @@ export default function ContactForm() {
         </FieldContent>
         <FieldError 
           className="text-[#DC2626] text-[13px]"
-          errors={[form.formState.errors.name as any]} 
+          errors={[form.formState.errors.name as { message?: string }]} 
         />
       </Field>
 
@@ -97,7 +97,7 @@ export default function ContactForm() {
         </FieldContent>
         <FieldError 
           className="text-[#DC2626] text-[13px]"
-          errors={[form.formState.errors.email as any]} 
+          errors={[form.formState.errors.email as { message?: string }]} 
         />
       </Field>
 
@@ -113,7 +113,7 @@ export default function ContactForm() {
         </FieldContent>
         <FieldError 
           className="text-[#DC2626] text-[13px]"
-          errors={[form.formState.errors.message as any]} 
+          errors={[form.formState.errors.message as { message?: string }]} 
         />
       </Field>
 
