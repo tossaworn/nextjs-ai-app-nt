@@ -78,3 +78,7 @@ fix(contact): prevent XSS in email HTML template
 - [ ] `npm run lint` ผ่านโดยไม่มี error
 - [ ] Type ใหม่อยู่ใน `src/types/` ไม่ใช่ inline ใน component
 - [ ] ไฟล์ชื่อ kebab-case เช่น `product-service.ts`
+
+## Output
+- ถ้า commit ไม่ผ่านหรือติดปัญหา อธิบายว่าติดปัญหาตรงไหน
+- ถ้า commit ผ่านสรุป comment ของ commit ให้ด้วย
