@@ -23,7 +23,7 @@ export default function Hero() {
         
         <p className="mx-auto mt-8 max-w-2xl text-[#57534E] text-[17px] leading-[1.8] font-sans">
           Instead of starting from scratch every time, use thoughtfully designed
-          blocks that give you a solid foundation for any UI.
+          blocks that give you a solid foundation for any UI. sum
         </p>
         
         <div className="mt-12 flex items-center justify-center gap-6">
