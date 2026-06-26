@@ -1,6 +1,7 @@
 import Link from "next/link";
 import AppLoading from "../components/app-loading";
 import { Suspense } from "react";
+import { CopyrightYear } from "./copyright-year";
 
 async function ApiVersion() {
   let version = 'Unknown';
@@ -78,7 +79,7 @@ export default function AboutPage() {
             </Suspense>
           </div>
           <p className="text-[13px] text-[#A8A29E]">
-            © {new Date().getFullYear()} ThoughtStream. All rights reserved.
+            <CopyrightYear /> ThoughtStream. All rights reserved.
           </p>
         </footer>
       </div>
