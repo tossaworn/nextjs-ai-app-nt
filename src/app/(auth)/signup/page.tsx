@@ -40,7 +40,7 @@ const registerSchema = z
       .min(8, "รหัสผ่านต้องมีอย่างน้อย 8 ตัวอักษร"),
     confirmPassword: z
       .string()
-      .min(1, "กรุณายืนยันรหัสผ่าน"),
+      .min(1, "กรุณายืนยันรหัสผ่าน 111"),
   })
   .refine((data) => data.password === data.confirmPassword, {
     message: "รหัสผ่านไม่ตรงกัน",
