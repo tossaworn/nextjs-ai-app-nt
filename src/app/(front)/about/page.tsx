@@ -71,7 +71,7 @@ export default function AboutPage() {
               href="/" 
               className="text-sm font-semibold text-[#78716C] hover:text-[#1C1917] transition-colors"
             >
-              ← กลับหน้าหลัก
+              ← กลับหน้าหลัก oc
             </Link>
             <Separator className="hidden md:block h-4 w-px bg-[#D6D3D1]" />
             <Suspense fallback={<AppLoading />}>
