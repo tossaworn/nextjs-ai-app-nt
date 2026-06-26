@@ -1,15 +1,5 @@
-'use client';
-
-import { useEffect, useState } from 'react';
-
 export function CopyrightYear() {
-  const [year, setYear] = useState<number | null>(null);
-
-  useEffect(() => {
-    setYear(new Date().getFullYear());
-  }, []);
-
-  if (year === null) return <>©</>;
+  const year = new Date().getFullYear();
 
   return <>© {year}</>;
 }
