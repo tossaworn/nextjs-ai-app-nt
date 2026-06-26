@@ -13,7 +13,7 @@ export default function Hero() {
           variant="secondary"
         >
           <Link href="#">
-            Just released v1.0.0 <ArrowUpRight className="ml-1.5 size-4 text-[#78716C]" />
+            NT 2026 Just released v1.0.0 <ArrowUpRight className="ml-1.5 size-4 text-[#78716C]" />
           </Link>
         </Badge>
 
